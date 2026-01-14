@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin — Chat</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">Admin</div>
+    <div class="meta">
+      <span id="clientsCount">—</span> online · <span id="messagesCount">—</span> msgs
+      <button id="refreshBtn">Обновить</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>Клиенты</h2>
+      <div id="clientsList" class="list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Последние сообщения</h2>
+      <div id="messagesList" class="chat"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
