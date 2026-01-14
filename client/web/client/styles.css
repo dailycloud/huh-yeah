@@ -1,0 +1,28 @@
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:#0b0f17;color:#e9eef7}
+.top{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #1c2433;background:#0e1522;position:sticky;top:0}
+.brand{font-weight:900;letter-spacing:.3px}
+.right{display:flex;gap:10px;align-items:center}
+.small{color:#93a7c7;font-size:12px}
+button{background:#1b2a44;border:1px solid #2a3a56;color:#e9eef7;padding:8px 10px;border-radius:10px;cursor:pointer}
+button:hover{filter:brightness(1.1)}
+.wrap{display:flex;flex-direction:column;height:calc(100vh - 54px)}
+.chat{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:10px}
+.bubble{padding:10px 12px;border:1px solid #1c2433;border-radius:14px;background:#0e1522}
+.bubble .head{display:flex;justify-content:space-between;gap:10px;margin-bottom:6px}
+.bubble .nick{font-weight:800}
+.bubble .ts{color:#93a7c7;font-size:12px}
+.bubble .text{white-space:pre-wrap;word-break:break-word}
+.sys{color:#b6c2d6;font-size:13px;padding:8px 10px;border:1px dashed #2a3a56;border-radius:12px;background:#0b0f17}
+.inputBar{display:flex;gap:10px;padding:12px;border-top:1px solid #1c2433;background:#0e1522}
+input{flex:1;background:#0b0f17;border:1px solid #1c2433;color:#e9eef7;padding:10px 12px;border-radius:12px;outline:none}
+input:focus{border-color:#2a3a56}
+
+/* modal */
+.modal{position:fixed;inset:0;display:grid;place-items:center;z-index:50}
+.modal[hidden]{display:none !important} /* FIX: really hide modal */
+.modalBg{position:absolute;inset:0;background:rgba(0,0,0,.55)}
+.modalCard{position:relative;z-index:2;width:min(420px,92vw);background:#0e1522;border:1px solid #1c2433;border-radius:16px;padding:14px}
+.modalTitle{font-weight:900;margin-bottom:10px}
+.modalActions{display:flex;justify-content:flex-end;gap:10px;margin-top:12px}
+.ghost{background:transparent;border-color:#2a3a56;color:#b6c2d6}

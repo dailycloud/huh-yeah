@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chat</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">Chat</div>
+    <div class="right">
+      <span class="small" id="connState">offline</span>
+      <button id="changeNickBtn">Ник</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="chat" id="chat"></section>
+
+    <footer class="inputBar">
+      <input id="msgInput" placeholder="Сообщение..." autocomplete="off" />
+      <button id="sendBtn">Отправить</button>
+    </footer>
+  </main>
+
+  <!-- Nick modal -->
+  <div class="modal" id="nickModal" hidden>
+    <div class="modalCard" role="dialog" aria-modal="true">
+      <div class="modalTitle">Ваш ник</div>
+      <input id="nickInput" placeholder="Например: claustrophob" maxlength="24" />
+      <div class="modalActions">
+        <button class="ghost" id="cancelNickBtn" type="button">Отмена</button>
+        <button id="saveNickBtn" type="button">Сохранить</button>
+      </div>
+    </div>
+    <div class="modalBg" id="modalBg"></div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
