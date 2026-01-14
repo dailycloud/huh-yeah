@@ -22,7 +22,8 @@
 `http://localhost:8000/admin/`
 
 
-## проверить коннекшен [logo]: https://github.com/dailycloud/huh-yeah/blob/main/readme/image.png "Logo Title Text 2"
+## проверить коннекшен
+[logo]: https://github.com/dailycloud/huh-yeah/blob/main/readme/image.png "Logo Title Text 2"
 ```bash
 ping <ip>
 ```
