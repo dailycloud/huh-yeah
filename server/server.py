@@ -1,9 +1,3 @@
-#!/usr/bin/env python3
-# server.py — Server ONLY (WebSocket chat + Admin dashboard + SQLite)
-# Run: python server.py
-# Admin: http://127.0.0.1:8000/admin/
-# WS: ws://127.0.0.1:8000/ws
-
 from __future__ import annotations
 
 import asyncio
@@ -64,7 +58,7 @@ def db_last_messages(limit: int = 200) -> List[dict]:
         con.close()
 
 
-@dataclass(eq=False)  # important: must be hashable to store in a set (works "as before")
+@dataclass(eq=False)
 class Client:
     ws: web.WebSocketResponse
     nick: str = "Guest"
@@ -110,7 +104,6 @@ hub = Hub()
 
 # --------- HTTP handlers (ADMIN only) ----------
 async def admin_index(request: web.Request) -> web.StreamResponse:
-    # Always serve index.html for /admin/ so we DON'T see "Index of /"
     return web.FileResponse(path=str(ADMIN_DIR / "index.html"))
 
 
@@ -190,10 +183,8 @@ def make_app() -> web.Application:
     app.router.add_get("/admin/", admin_index)
     app.router.add_static("/admin/", path=str(ADMIN_DIR), show_index=False)
 
-    # Admin API
     app.router.add_get("/api/admin/state", admin_state)
 
-    # WebSocket endpoint for clients
     app.router.add_get("/ws", ws_handler)
 
     return app
