@@ -28,7 +28,7 @@
 ping <ip>
 ```
 
-[тут картинку ](https://github.com/dailycloud/huh-yeah/blob/main/readme/image.png)
+[logo]: https://github.com/dailycloud/huh-yeah/blob/main/readme/image.png "Logo Title Text 2"
 
 
 # клиентеек
