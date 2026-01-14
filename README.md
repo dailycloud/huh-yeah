@@ -28,7 +28,7 @@
 ping <ip>
 ```
 
-тут картинку 
+[тут картинку ](https://github.com/dailycloud/huh-yeah/blob/main/readme/image.png)
 
 
 # клиентеек
