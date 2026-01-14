@@ -23,7 +23,7 @@
 
 
 ## проверить коннекшен
-[logo]: https://github.com/dailycloud/huh-yeah/blob/main/readme/image.png "Logo Title Text 2"
+https://github.com/dailycloud/huh-yeah/blob/main/readme/image.png
 ```bash
 ping <ip>
 ```
