@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>✧ Pixel Chat ✧</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── Экран подключения ── -->
+  <div class="connectScreen" id="connectScreen">
+    <div class="connectCard pixel-box">
+      <div class="connectTitle">PIXEL CHAT</div>
+      <div class="connectSub">join the cute server ૮ ˶ᵔ ᵕ ᵔ˶ ა</div>
+      <input id="serverInput" placeholder="192.168.1.1:8000" autocomplete="off" spellcheck="false" />
+      <div id="connectError" class="connectError" hidden></div>
+      <button id="connectBtn" type="button" class="pixel-btn">Connect!</button>
+    </div>
+  </div>
+
+  <!-- ── Экран чата ── -->
+  <div class="chatScreen" id="chatScreen" hidden>
+    <header class="top pixel-box-bottom">
+      <div class="brand">✧ PIXEL CHAT ✧</div>
+      <div class="right">
+        <span class="small" id="connState">offline</span>
+        <button id="changeNickBtn" class="pixel-btn-small">Nick</button>
+        <button class="ghost pixel-btn-small" id="disconnectBtn" title="Сменить сервер">Exit</button>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="chat" id="chat"></section>
+      <footer class="inputBar pixel-box-top">
+        <input id="msgInput" placeholder="Type a message..." autocomplete="off" />
+        <button id="sendBtn" class="pixel-btn">Send</button>
+      </footer>
+    </main>
+  </div>
+
+  <!-- ── Модал ника ── -->
+  <div class="modal" id="nickModal" hidden>
+    <div class="modalCard pixel-box" role="dialog" aria-modal="true">
+      <div class="modalTitle">CHOOSE NICKNAME</div>
+      <input id="nickInput" placeholder="e.g. fluffy_bunny" maxlength="24" />
+      <div class="modalActions">
+        <button class="ghost pixel-btn" id="cancelNickBtn" type="button">Cancel</button>
+        <button id="saveNickBtn" type="button" class="pixel-btn">Save</button>
+      </div>
+    </div>
+    <div class="modalBg" id="modalBg"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

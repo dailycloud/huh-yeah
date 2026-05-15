@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin ✧ Pixel Chat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top pixel-box-bottom">
+    <div class="brand">ADMIN DASHBOARD</div>
+    <div class="meta">
+      <div class="stats pixel-box-small">
+        <span id="clientsCount">—</span> online · <span id="messagesCount">—</span> msgs
+      </div>
+      <button id="refreshBtn" class="pixel-btn">Refresh</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card pixel-box">
+      <h2>Clients</h2>
+      <div id="clientsList" class="list"></div>
+    </section>
+
+    <section class="card pixel-box">
+      <h2>Recent Messages</h2>
+      <div id="messagesList" class="chat"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
