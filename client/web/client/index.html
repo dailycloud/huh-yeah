@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>✧ Pixel Chat ✧</title>
+  <title>Chat</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -14,8 +14,7 @@
   <!-- ── Экран подключения ── -->
   <div class="connectScreen" id="connectScreen">
     <div class="connectCard pixel-box">
-      <div class="connectTitle">PIXEL CHAT</div>
-      <div class="connectSub">join the cute server ૮ ˶ᵔ ᵕ ᵔ˶ ა</div>
+      <div class="connectSub">Enter server address to connect</div>
       <input id="serverInput" placeholder="192.168.1.1:8000" autocomplete="off" spellcheck="false" />
       <div id="connectError" class="connectError" hidden></div>
       <button id="connectBtn" type="button" class="pixel-btn">Connect!</button>
@@ -25,7 +24,6 @@
   <!-- ── Экран чата ── -->
   <div class="chatScreen" id="chatScreen" hidden>
     <header class="top pixel-box-bottom">
-      <div class="brand">✧ PIXEL CHAT ✧</div>
       <div class="right">
         <span class="small" id="connState">offline</span>
         <button id="changeNickBtn" class="pixel-btn-small">Nick</button>

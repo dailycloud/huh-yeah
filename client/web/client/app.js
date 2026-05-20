@@ -44,8 +44,19 @@ function addSystem(text){
   scrollBottom();
 }
 function addMessage(n, text, time_ms){
+  const last = chat.querySelector(".bubble:last-child");
+  if(last && last.dataset.nick === n){
+    const line = document.createElement("div");
+    line.className = "text";
+    line.textContent = text;
+    last.appendChild(line);
+    last.querySelector(".ts").textContent = fmt(time_ms);
+    scrollBottom();
+    return;
+  }
   const div = document.createElement("div");
-  div.className = "bubble";
+  div.className = "bubble" + (n === nick ? " self" : "");
+  div.dataset.nick = n;
   div.innerHTML = `
     <div class="head">
       <div class="nick">${esc(n)}</div>

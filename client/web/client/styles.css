@@ -237,7 +237,7 @@ button {
   max-width: 80%;
   align-self: flex-start;
 }
-.bubble:nth-child(even) {
+.bubble.self {
   background: #1e1e2e;
   border-radius: 16px 16px 4px 16px;
   align-self: flex-end;
@@ -254,6 +254,7 @@ button {
 .bubble .nick { font-weight: 800; font-size: 15px; color: #f5c2e7; }
 .bubble .ts   { color: #a6adc8; font-size: 12px; font-weight: 600; }
 .bubble .text { white-space: pre-wrap; word-break: break-word; font-size: 15px; font-weight: 600; line-height: 1.5; color: #cdd6f4; }
+.bubble .text + .text { margin-top: 4px; }
 
 .sys {
   color: #a6adc8;
