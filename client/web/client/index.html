@@ -11,8 +11,17 @@
 </head>
 <body>
 
+  <!-- ── Экран ника ── -->
+  <div class="connectScreen" id="nickScreen">
+    <div class="connectCard pixel-box">
+      <div class="connectSub">Choose your nickname</div>
+      <input id="nickScreenInput" placeholder="Your nickname" maxlength="24" autocomplete="off" spellcheck="false" />
+      <button id="nickScreenBtn" type="button" class="pixel-btn">Continue</button>
+    </div>
+  </div>
+
   <!-- ── Экран подключения ── -->
-  <div class="connectScreen" id="connectScreen">
+  <div class="connectScreen" id="connectScreen" hidden>
     <div class="connectCard pixel-box">
       <div class="connectSub">Enter server address to connect</div>
       <input id="serverInput" placeholder="192.168.1.1:8000" autocomplete="off" spellcheck="false" />

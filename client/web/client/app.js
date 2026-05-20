@@ -1,4 +1,7 @@
 /* ── screens ── */
+const nickScreen      = document.getElementById("nickScreen");
+const nickScreenInput = document.getElementById("nickScreenInput");
+const nickScreenBtn   = document.getElementById("nickScreenBtn");
 const connectScreen = document.getElementById("connectScreen");
 const chatScreen    = document.getElementById("chatScreen");
 const serverInput   = document.getElementById("serverInput");
@@ -113,6 +116,7 @@ function buildWsUrl(raw){
 function showConnectScreen(){
   if(ws){ ws.onclose = null; ws.onerror = null; ws.close(); ws = null; }
   if(reconnectTimer){ clearTimeout(reconnectTimer); reconnectTimer = null; }
+  nickScreen.hidden = true;
   chatScreen.hidden = true;
   connectScreen.hidden = false;
   serverInput.focus();
@@ -214,9 +218,34 @@ function send(){
 sendBtn.addEventListener("click", send);
 msgInput.addEventListener("keydown", (e)=>{ if(e.key === "Enter"){ e.preventDefault(); send(); } });
 
+/* ── nick screen ── */
+function showNickScreen(){
+  nickScreen.hidden = false;
+  connectScreen.hidden = true;
+  chatScreen.hidden = true;
+  nickScreenInput.value = nick === "Guest" ? "" : nick;
+  nickScreenInput.focus();
+}
+
+function confirmNick(){
+  const v = nickScreenInput.value.trim().slice(0, 24);
+  if(!v){ nickScreenInput.focus(); return; }
+  nick = v;
+  localStorage.setItem("nick", nick);
+  nickScreen.hidden = true;
+  showConnectScreen();
+}
+
+nickScreenBtn.addEventListener("click", confirmNick);
+nickScreenInput.addEventListener("keydown", (e)=>{ if(e.key === "Enter") confirmNick(); });
+
 /* ── init ── */
 const saved = localStorage.getItem("lastServer");
 if(saved){
   serverInput.value = saved;
 }
-showConnectScreen();
+if(localStorage.getItem("nick")){
+  showConnectScreen();
+} else {
+  showNickScreen();
+}
