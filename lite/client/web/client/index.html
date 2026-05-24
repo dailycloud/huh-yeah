@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Minimal Chat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── Экран выбора ника ── -->
+  <div class="screen active" id="nickScreen">
+    <div class="card">
+      <div class="card-header">
+        <h1 class="card-title">Welcome to Chat</h1>
+        <p class="card-subtitle">Choose a nickname to get started</p>
+      </div>
+      <div class="card-body">
+        <input id="nickScreenInput" placeholder="Your nickname" maxlength="24" autocomplete="off" spellcheck="false" />
+        <button id="nickScreenBtn" type="button" class="btn primary">Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Экран чата ── -->
+  <div class="chat-container" id="chatScreen" hidden>
+    <header class="header">
+      <div class="brand">
+        <span class="status-indicator offline" id="connIndicator"></span>
+        <span class="brand-text">Room Chat</span>
+      </div>
+      <div class="header-actions">
+        <span class="status-badge" id="connState">offline</span>
+        <button id="changeNickBtn" class="btn secondary small">Edit Nick</button>
+        <button class="btn danger small" id="disconnectBtn" title="Exit Chat">Exit</button>
+      </div>
+    </header>
+
+    <main class="chat-area">
+      <section class="chat-log" id="chat"></section>
+    </main>
+
+    <footer class="input-bar">
+      <input id="msgInput" placeholder="Type a message..." autocomplete="off" />
+      <button id="sendBtn" class="btn primary">Send</button>
+    </footer>
+  </div>
+
+  <!-- ── Модал изменения ника ── -->
+  <div class="modal" id="nickModal" hidden>
+    <div class="modal-bg" id="modalBg"></div>
+    <div class="modal-card" role="dialog" aria-modal="true">
+      <h3 class="modal-title">Change Nickname</h3>
+      <input id="nickInput" placeholder="e.g. fluffy_bunny" maxlength="24" autocomplete="off" />
+      <div class="modal-actions">
+        <button class="btn secondary" id="cancelNickBtn" type="button">Cancel</button>
+        <button id="saveNickBtn" type="button" class="btn primary">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
